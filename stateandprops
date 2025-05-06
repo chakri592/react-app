@@ -1,1 +1,71 @@
+state it is used to assign the list of values and assign to it.
+
+#class component
+
+#class based component
+import React from "react"
+
+class App extends React.Component{
+  state ={
+    name="chakri",
+    age=20
+  }
+  render(){
+    return(
+      <div>
+        <center>
+          <h3>I am {this.state.name}!!  and my age is {this.state.age}</h3>
+        </center>
+      </div>
+    )
+  }
+}
+export default App;
+
+
+#how to use with other component
+#class component one
+
+App.js
+import React from "react";
+
+#importing the test component
+
+import Test from './Test';
+
+class App extends React.Component{
+  state ={
+    name="chakri",
+    age=20
+  }
+  render(){
+    return(
+      <div>
+        <center>
+          <Test name={this.state.name} age={this.state.age}/>
+        </center>
+      </div>
+    )
+  }
+}
+export default App;
+
+Test.js
+import React from "react"
+
+class Test extends React.Component{
+  render(){
+    return(
+      <div>
+        <center>
+          <h3>I am {this.props.name}!!  and my age is {this.props.age}</h3>
+        </center>
+      </div>
+    )
+  }
+}
+export default Test;
+
+
+
 
