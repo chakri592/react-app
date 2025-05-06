@@ -30,3 +30,6 @@ class App extends React.Component{
   }
 }
 export default App;
+
+
+link=https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components/
