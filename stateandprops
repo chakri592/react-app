@@ -66,6 +66,43 @@ class Test extends React.Component{
 }
 export default Test;
 
+#functional component
+
+import React,{useState} from 'react';
+import Test from './Test';
+
+const App=()=>{
+  const [data,setData]=useState(
+    {
+      name:'chakri',
+      age: 25,
+    }
+  );
+  const {name,age}=data;
+  return (
+    <div>
+      <center>
+        <Test name={name} age={age}/>
+      </center>
+        #<h1> Name : {name}</h1>
+    </div>
+  )
+}
+
+export default App
 
 
+Test.js
+import React from 'react'
 
+const Test=(props) =>{
+  return (
+    <div>
+      <center>
+        <h2> nmae : {props.name} and age : {props.age}</h2>
+      </center>
+    </div>
+  )
+}
+
+export default Test
