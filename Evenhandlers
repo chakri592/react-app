@@ -1,1 +1,67 @@
 onclick-->
+
+const App=()=>{
+  return (
+    <div>
+        <center>
+            <button onClick={()=>alert('Heloo')}> Click Me</button>
+        </center>
+    </div>
+  )
+}
+export default App
+------------
+import React,{useState} from 'react'
+const App=()=>{
+  const [name,setName]=useState('');
+  return (
+    <div>
+        <center>
+            <button onClick={()=>alert('Heloo')}> Click Me</button>
+              Name : {name} <br/>
+            <input type="text" name="name" onChange={(e)=>setName(e.target.value)}/>
+        </center>
+    </div>
+  )
+}
+export default App
+
+-----------------------------
+using form
+
+import React,{useState} from 'react'
+const App=()=>{
+  const [data,setData]=useState(
+    {
+        email : '', 
+        password : ''
+    }
+  )
+const changeHandler = e=>{
+  setData({...data,[e.target.name]:e.target.value})
+}
+
+const submitHandler=e=>{
+  e.preventDefault();
+  if(data.password.length<5)
+  {
+      alert('provide password length >5 ')
+  }
+  console.log(data);
+}
+  return (
+    <div>
+        <center>
+            <form onsubmit={submitHandler}>
+              <label style={{'color':'powdered-blue','fontFamily':'Tahoma'}}>E-Mail</label> <br />
+              <input type="text" name="email" onchange={changeHandler} /><br />
+              <label> Password :</label> <br />
+              <input type="password" name="password" onchange={changeHandler} /><br />
+              <input type="submit" value="Login" />
+            </form>
+        </center>
+    </div>
+  )
+}
+export default App
+
